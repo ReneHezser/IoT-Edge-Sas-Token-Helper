@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <OutputType>Library</OutputType>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>Azure.IoT.Edge.SasTokenHelper</PackageId>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Title>IoT Edge SAS Token Helper</Title>
+    <PackageDescription>
+      This package generates SAS Tokens from within a running IoT Edge module by querying the Workload API from IoT Edge.
+      The sample is based on the IoT Edge EventGrid SDK (https://github.com/Azure/event-grid-iot-edge/tree/master/SecurityDaemonClient).
+    </PackageDescription>
+    <Version>1.0.3</Version>
+    <Authors>René Hézser</Authors>
+    <Company>RH</Company>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="*"/>
+  </ItemGroup>
+</Project>
