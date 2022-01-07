@@ -21,8 +21,10 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
-    - name: Login to GitHub Packages
-      run: dotnet nuget add source --username ReneHezser --password ${{ secrets.TOKEN }} --name github "https://nuget.pkg.github.com/ReneHezser/index.json"
-    - name: Publish nuget package
-      run: dotnet nuget push "bin/Release/Azure.IoT.Edge.SasTokenHelper.1.0.3.nupkg" --source "github"
+    - name: Pack
+      run: dotnet pack --configuration Release
+    # - name: Login to GitHub Packages
+    #  run: dotnet nuget add source --username ReneHezser --password ${{ secrets.TOKEN }} --name github "https://nuget.pkg.github.com/ReneHezser/index.json"
+    - name: Publish
+      run: dotnet nuget push "bin/Release/Azure.IoT.Edge.SasTokenHelper.1.0.3.nupkg" --api-key ${{ secrets.TOKEN }} --source "github"
 
