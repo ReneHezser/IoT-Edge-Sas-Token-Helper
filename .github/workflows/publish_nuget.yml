@@ -1,0 +1,28 @@
+name: .NET
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
+    - name: Login to GitHub Packages
+      run: dotnet nuget add source --username ReneHezser --password ${{ secrets.TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/ReneHezser/index.json"
+    - name: Publish nuget package
+      run: dotnet nuget push "bin/Release/Azure.IoT.Edge.SasTokenHelper.1.0.3.nupkg" --source "github"
+
