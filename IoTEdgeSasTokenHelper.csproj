@@ -14,8 +14,9 @@
       The sample is based on the IoT Edge EventGrid SDK (https://github.com/Azure/event-grid-iot-edge/tree/master/SecurityDaemonClient).
     </PackageDescription>
     <Version>1.0.3</Version>
-    <Authors>René Hézser</Authors>
+    <Authors>ReneHezser</Authors>
     <Company>RH</Company>
+    <RepositoryUrl>https://github.com/ReneHezser/IoT-Edge-Sas-Token-Helper</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
