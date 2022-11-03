@@ -12,7 +12,7 @@ Building the project you will get a nuget package, that can be added to your pro
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <RestoreAdditionalProjectSources>
       https://api.nuget.org/v3/index.json;
       $(MSBuildThisFileDirectory)/References/
@@ -23,7 +23,7 @@ Building the project you will get a nuget package, that can be added to your pro
   </ItemGroup>
 </Project>
 ```
-Please copy the generated nuget file [Azure.IoT.Edge.SasTokenHelper.1.0.3.nupkg](Azure.IoT.Edge.SasTokenHelper.1.0.3.nupkg) to a sufolder *References*.
+Please copy the generated nuget file [Azure.IoT.Edge.SasTokenHelper.1.0.4.nupkg](Azure.IoT.Edge.SasTokenHelper.1.0.4.nupkg) to a sufolder *References*.
 
 Within your code, you can then use the package like this:
 
