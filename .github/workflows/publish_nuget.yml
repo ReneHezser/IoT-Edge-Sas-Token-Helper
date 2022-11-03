@@ -16,7 +16,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 5.0.x
+        dotnet-version: 6.0.x
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
@@ -26,5 +26,5 @@ jobs:
     - name: Login to GitHub Packages
       run: dotnet nuget add source --username ${{ github.repository_owner }} --password ${{ secrets.TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json"
     - name: Publish
-      run: dotnet nuget push "bin/Release/Azure.IoT.Edge.SasTokenHelper.1.0.3.nupkg" --api-key ${{ secrets.TOKEN }} --source "github" --skip-duplicate
+      run: dotnet nuget push "bin/Release/Azure.IoT.Edge.SasTokenHelper.1.0.4.nupkg" --api-key ${{ secrets.TOKEN }} --source "github" --skip-duplicate
 
